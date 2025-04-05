@@ -23,7 +23,6 @@ function App() {
         </Route>
         {/* protected routes */}
         <Route element={<ProtectedRoutes><MainLayout /></ProtectedRoutes>} >
-
         </Route>
       </Routes>
     </Router>
