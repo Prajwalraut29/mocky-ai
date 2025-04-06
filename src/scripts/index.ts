@@ -34,7 +34,7 @@ const generationConfig = {
     },
   ];
 
-  export const chartSession = model.startChat({
+  export const chatSession = model.startChat({
     generationConfig,
     safetySettings
   })

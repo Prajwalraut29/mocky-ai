@@ -20,8 +20,7 @@ import {
 } from "./ui/form"
 import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
-import { ChatSession } from "@google/generative-ai"
-import { chartSession } from "@/scripts"
+import { chatSession } from "@/scripts"
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from "firebase/firestore"
 import { db } from "@/config/firebase.config"
 
@@ -94,7 +93,7 @@ const FormMockInterview = ({ initialData }: FormMockInterviewProps) => {
         The questions should assess skills in ${data?.techStack} development and best practices, problem-solving, and experience handling complex requirements. Please format the output strictly as an array of JSON objects without any additional labels, code blocks, or explanations. Return only the JSON array with questions and answers.
         `;
 
-        const aiResult = await chartSession.sendMessage(prompt)
+        const aiResult = await chatSession.sendMessage(prompt)
         const cleanedResponse = cleanAIResponse(aiResult.response.text())
         return cleanedResponse;
     }

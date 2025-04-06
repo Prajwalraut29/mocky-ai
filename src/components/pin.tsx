@@ -124,7 +124,7 @@ export const InterviewPin = ({ data, onMockPage = false, }: dataPinProps) => {
                             content="Start"
                             buttonVariant={"ghost"}
                             onClick={() => {
-                                navigate(`/generate/data/${data.id}`, { replace: true });
+                                navigate(`/generate/interview/${data.id}`, { replace: true });
                                 console.log(data.id)
                             }}
                             disbaled={false}
