@@ -5,7 +5,6 @@ import {
     InstagramIcon,
     LinkedinIcon,
 } from 'lucide-react'
-import Container from './container'
 const Footer = () => {
     return (
         <footer className="w-full">

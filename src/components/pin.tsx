@@ -1,6 +1,6 @@
 import { Interview } from "@/types";
 import { useAuth } from "@clerk/clerk-react";
-import { Badge, Newspaper, Pencil, Sparkles, Trash2 } from "lucide-react";
+import { Newspaper, Pencil, Sparkles, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardDescription, CardFooter, CardTitle } from "./ui/card";
