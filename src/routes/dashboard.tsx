@@ -13,6 +13,7 @@ import { error } from "console"
 import { toast } from "sonner"
 import { unsubscribe } from "diagnostics_channel"
 import { InterviewPin } from "@/components/pin"
+import notfound from "../assets/svg/not-found.svg"
 import { Skeleton } from "@/components/ui/skeleton"
 const Dashboard = () => {
 
@@ -77,9 +78,9 @@ const Dashboard = () => {
                 ) : (
                     <div className="md:col-span-3 w-full flex flex-grow items-center justify-center h-96 flex-col">
                         <img
-                            src="/svg/not-found.svg"
+                            src={notfound}
                             className="w-44 h-44 object-contain"
-                            alt=""
+                            alt="not found"
                         />
 
                         <h2 className="text-lg font-semibold text-muted-foreground">

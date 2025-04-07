@@ -12,6 +12,10 @@ import Dashboard from "./routes/dashboard"
 import CreateEditPage from "./routes/create-edit-page"
 import MockLoadPage from "./routes/mock-load-page"
 import MockInterviewPage from "./routes/mock-interview-page"
+import FeedBack from "./routes/feedback"
+import ContactUs from "./routes/contactus"
+import About from "./routes/about"
+import Service from "./routes/service"
 function App() {
 
   return (
@@ -20,6 +24,11 @@ function App() {
         {/* public routes */}
         <Route element={<PublicLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Service />} />
+
+
         </Route>
         {/* authenticattion layout */}
         <Route element={<AuthLayout />}>
@@ -35,6 +44,7 @@ function App() {
             <Route path=":interviewId" element={<CreateEditPage />} />
             <Route path="interview/:interviewId" element={<MockLoadPage />} />
             <Route path="interview/:interviewId/start" element={<MockInterviewPage />} />
+            <Route path="feedback/:interviewId" element={<FeedBack />} />
           </Route>
         </Route>
       </Routes>

@@ -6,6 +6,7 @@ import {
     BarChartIcon,
     SparklesIcon,
 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 const HomePage = () => {
     return (
         <Container>
@@ -15,7 +16,7 @@ const HomePage = () => {
                         <div>
                             <h1 className="text-5xl font-bold text-gray-900 leading-tight">
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-600">
-                                    AI Superpower
+                                    Mocky AI
                                 </span>
                                 <span className="block mt-2">
                                     A better way to improve your interview chances and skills
@@ -27,10 +28,12 @@ const HomePage = () => {
                                 and stand out.
                             </p>
                             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                                <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
-                                    Try Mock Interview{' '}
-                                    <ArrowRightIcon size={18} className="ml-2" />
-                                </button>
+                                <Link to={"/generate"}>
+                                    <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
+                                        Try Mock Interview{' '}
+                                        <ArrowRightIcon size={18} className="ml-2" />
+                                    </button>
+                                </Link>
                                 <button className="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-md font-medium">
                                     Learn More
                                 </button>
@@ -68,9 +71,11 @@ const HomePage = () => {
                                 chances of landing your dream job. Let AI be your edge in
                                 today's competitive job market.
                             </p>
-                            <button className="mt-8 bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
-                                Generate <SparklesIcon size={18} className="ml-2" />
-                            </button>
+                            <Link to={"/generate"}>
+                                <button className="mt-8 bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
+                                    Generate <SparklesIcon size={18} className="ml-2" />
+                                </button>
+                            </Link>
                         </div>
                         <div className="relative">
                             <img
@@ -107,7 +112,7 @@ const HomePage = () => {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl font-bold text-gray-900">
-                            How AI Superpower Works
+                            How Mocky Ai Works
                         </h2>
                         <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
                             Our advanced AI technology simulates real interview scenarios,
@@ -166,9 +171,11 @@ const HomePage = () => {
                         Join thousands of professionals who have transformed their interview
                         skills and landed their dream jobs.
                     </p>
-                    <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-medium text-lg">
-                        Get Started Now
-                    </button>
+                    <Link to={"/generate"}>
+                        <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-medium text-lg">
+                            Get Started Now
+                        </button>
+                    </Link>
                 </div>
             </section>
         </Container>

@@ -15,7 +15,6 @@ interface dataPinProps {
     onMockPage?: boolean
 }
 
-
 export const InterviewPin = ({ data, onMockPage = false, }: dataPinProps) => {
 
     const navigate = useNavigate()
@@ -66,7 +65,12 @@ export const InterviewPin = ({ data, onMockPage = false, }: dataPinProps) => {
             <CardDescription>{data?.description}</CardDescription>
             <div className="w-full flex items-center gap-2 flex-wrap">
                 {data.techStack.split(",").map((word, index) => (
-                    <Badge key={index} className="text-xs text-muted-foreground hover:border-emerald-400 hover:bg-emerald-50 hover:text-emerald-900">{word}</Badge>
+                    <strong
+                        key={index}
+                        className="text-xs text-muted-foreground hover:border-emerald-400 hover:bg-emerald-50 hover:text-emerald-900"
+                    >
+                        {word}
+                    </strong>
                 ))}
             </div>
 
@@ -135,6 +139,6 @@ export const InterviewPin = ({ data, onMockPage = false, }: dataPinProps) => {
                     </div>
                 )}
             </CardFooter>
-        </Card>
+        </Card >
     )
 }

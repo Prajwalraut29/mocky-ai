@@ -3,7 +3,7 @@ import { useState } from "react";
 import { TooltipButton } from "./tooltip-button";
 import { Volume2, VolumeX } from "lucide-react";
 import { cn } from "@/lib/utils";
-import RecordAnswer from "./record-answer";
+import { RecordAnswer } from "./record-answer";
 
 interface QuestionSectionProps {
     questions: { question: string; answer: string }[]
