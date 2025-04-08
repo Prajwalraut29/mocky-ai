@@ -1,4 +1,5 @@
 import Container from '@/components/ui/container'
+import { useAuth, UserButton } from '@clerk/clerk-react'
 import {
     ArrowRightIcon,
     BrainCircuitIcon,
@@ -8,6 +9,8 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 const HomePage = () => {
+    const { isSignedIn, isLoaded } = useAuth()
+
     return (
         <Container>
             <section className="w-full bg-gradient-to-br bg-white py-16 px-6 border-b border-b-gray-200 shadow">
@@ -28,12 +31,20 @@ const HomePage = () => {
                                 and stand out.
                             </p>
                             <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                                <Link to={"/generate"}>
+                                {isSignedIn ? (
+                                    <Link to={"/generate"}>
+                                        <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
+                                            Try Mock Interview{' '}
+                                            <ArrowRightIcon size={18} className="ml-2" />
+                                        </button>
+                                    </Link>
+                                ) : (<Link to={"/singin"}>
                                     <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
                                         Try Mock Interview{' '}
                                         <ArrowRightIcon size={18} className="ml-2" />
                                     </button>
-                                </Link>
+                                </Link>)
+                                }
                                 <button className="border border-gray-300 bg-white text-gray-700 px-6 py-3 rounded-md font-medium">
                                     Learn More
                                 </button>
@@ -71,11 +82,20 @@ const HomePage = () => {
                                 chances of landing your dream job. Let AI be your edge in
                                 today's competitive job market.
                             </p>
-                            <Link to={"/generate"}>
-                                <button className="mt-8 bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
-                                    Generate <SparklesIcon size={18} className="ml-2" />
+                            {isSignedIn ? (
+                                <Link to={"/generate"}>
+                                    <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
+                                        Try Mock Interview{' '}
+                                        <ArrowRightIcon size={18} className="ml-2" />
+                                    </button>
+                                </Link>
+                            ) : (<Link to={"/singin"}>
+                                <button className="bg-gray-900 text-white px-6 py-3 rounded-md font-medium flex items-center justify-center">
+                                    Try Mock Interview{' '}
+                                    <ArrowRightIcon size={18} className="ml-2" />
                                 </button>
-                            </Link>
+                            </Link>)
+                            }
                         </div>
                         <div className="relative">
                             <img
@@ -171,11 +191,19 @@ const HomePage = () => {
                         Join thousands of professionals who have transformed their interview
                         skills and landed their dream jobs.
                     </p>
-                    <Link to={"/generate"}>
+                    {isSignedIn ? (
+                        <Link to={"/generate"}>
+                            <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-medium text-lg">
+                                Get Started Now
+                            </button>
+                        </Link>
+                    ) : (<Link to={"/singin"}>
                         <button className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-md font-medium text-lg">
                             Get Started Now
                         </button>
-                    </Link>
+                    </Link>)
+                    }
+
                 </div>
             </section>
         </Container>
